@@ -1,0 +1,84 @@
+
+//methode1 
+algorithm_SUM1
+VAR
+T1, T2 : array of INTEGER;
+sum,i,j,n,m: INTEGER;
+BEGIN
+sum=0;
+FOR i FROM 0 TO n-1 STEP 1 DO
+    FOR j FROM 0 TO m-1 STEP 1  DO
+        IF (T1[i]= T2[j]) THEN
+            break;
+        END_IF
+        ELSE IF (j=m-1)  THEN                                       
+             sum= sum+ T1[i]                                          
+        END_IF
+    END_FOR
+END_FOR
+FOR j FROM 0 TO m-1 STEP 1 DO
+    FOR i FROM 0 TO n-1 STEP 1  DO
+         IF (T1[i]= T2[j]) THEN
+            break;
+        END_IF
+        ELSE IF (i=n-1)  THEN                                         
+             sum= sum+ T2[j]                                             
+        END_IF
+    END_FOR
+writeln(sum);
+END
+//methode2 
+algorithm_SUM1
+VAR
+hT1: HASH_TABLE<INTEGER, array_T1 : ARRAY_OF INTEGER[]> 
+hT2: HASH_TABLE<INTEGER,array_T2: ARRAY_OF INTEGER[]>
+sum,i,j,n,m: INTEGER;
+BEGIN
+sum=0;
+FOR i FROM 0 TO n-1  STEP 1  DO
+    FOR j FROM 0 TO m-1 STEP 1  DO
+        IF (hT1.get (T1[i]) = hT2.get(T2[i])) THEN
+           break; 
+        END_IF
+         ELSE IF (j=m-1)  THEN                                       
+           sum= sum + hT1.get(T1[i]))                                       
+        END_IF
+    END_FOR
+END_FOR
+FOR j FROM 0 TO m-1  STEP 1  DO
+    FOR i FROM 0 TO n-1 STEP 1  DO
+        IF (hT1.get (T1[i]) = hT2.get(T2[j])) THEN
+            break;
+        END_IF
+         ELSE IF (i=n-1)  THEN                                       
+           sum= sum + hT2.get(T2[j]))                                      
+        END_IF
+    END_FOR
+END_FOR
+writeln(sum);
+END
+//Partie 2 
+algorithm_SUM2
+VAR
+VAR
+T1, T2 : array of INTEGER;
+sum,i,j,n,m: INTEGER;
+BEGIN
+sum=0;
+FOR i FROM 0 TO n-1 STEP 1 DO
+    FOR j FROM 0 TO m-1 STEP 1  DO
+        IF (T1[i]=T2[j]) THEN
+            sum= sum+ T1[i]
+        END_IF
+    END_FOR
+END_FOR
+FOR j FROM 0 TO m-1 STEP 1 DO
+    FOR i FROM 0 TO n-1 STEP 1  DO
+        IF (T1[i]= T2[j]) THEN
+            sum= sum+ T2[j]
+        END_IF
+    END_FOR
+END_FOR
+writeln(sum);
+END
+
